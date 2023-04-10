@@ -25,6 +25,6 @@ const server = http.createServer(app);
 /**
  * TODO node cluster module
  */
-server.listen(process.env.PORT || env.PORT || 5000, () => { console.log(chalk.greenBright.bold.italic(`app running on port ${env.PORT}`)); });
+server.listen(5000, () => { console.log(chalk.greenBright.bold.italic(`app running on port ${env.PORT}`)); });
 
 
