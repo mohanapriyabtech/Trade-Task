@@ -2,7 +2,7 @@ import crypto from 'crypto';
 import { env } from '../configs/env';
 
 // Must be 256 bits (32 characters)
-const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY || env.ENCRYPTION_KEY || 'agdjhjdhfjdjshkjgfghnbjkggnhhnbv'; // Must be 256 bits (32 characters)
+const ENCRYPTION_KEY = 'agdjhjdhfjdjshkjgfghnbjkggnhhnbv'; // Must be 256 bits (32 characters)
 const IV_LENGTH = 16; // For AES, this is always 16
 const ALGORITHM = 'aes-256-cbc';
 
