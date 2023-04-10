@@ -5,13 +5,13 @@ import { env } from '../configs/env';
 
 const { applicationMessages } = require('../lang/lang')('en');
 
-MONGODB_URL="mongodb://127.0.0.1:27017/hyper-ledger"
-HOST = 'localhost'
-MONGODB_HOST = '127.0.0.1'
-MONGODB_PORT =  27017
-MONGODB_DB_NAME =  hyper-ledger
-MONGODB_PASSWORD = ""
-MONGODB_USERNAME  = ""
+const MONGODB_URL="mongodb://127.0.0.1:27017/hyper-ledger"
+const HOST = 'localhost'
+const MONGODB_HOST = '127.0.0.1'
+const MONGODB_PORT =  27017
+const MONGODB_DB_NAME =  "hyper-ledger"
+const MONGODB_PASSWORD = ""
+const MONGODB_USERNAME  = ""
 
 if(MONGODB_PASSWORD == '' || MONGODB_PASSWORD == undefined ){
     console.log(chalk.blueBright.bold('Mongodb Connecting without password'));
