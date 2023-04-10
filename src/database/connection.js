@@ -5,15 +5,23 @@ import { env } from '../configs/env';
 
 const { applicationMessages } = require('../lang/lang')('en');
 
-if(env.MONGODB_PASSWORD == '' || env.MONGODB_PASSWORD == undefined){
+MONGODB_URL="mongodb://127.0.0.1:27017/hyper-ledger"
+HOST = 'localhost'
+MONGODB_HOST = '127.0.0.1'
+MONGODB_PORT =  27017
+MONGODB_DB_NAME =  hyper-ledger
+MONGODB_PASSWORD = ""
+MONGODB_USERNAME  = ""
+
+if(MONGODB_PASSWORD == '' || MONGODB_PASSWORD == undefined ){
     console.log(chalk.blueBright.bold('Mongodb Connecting without password'));
-    console.log(chalk.magenta.bold(`mongodb://${env.MONGODB_HOST}:${env.MONGODB_PORT}/${env.MONGODB_DB_NAME}`))
+    console.log(chalk.magenta.bold(`mongodb://${MONGODB_HOST}:${MONGODB_PORT}/${MONGODB_DB_NAME}`))
     mongoose.set('strictQuery', true);
-    mongoose.connect(`mongodb://${env.MONGODB_HOST}:${env.MONGODB_PORT}/${env.MONGODB_DB_NAME}`, { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect(`mongodb://${MONGODB_HOST}:${MONGODB_PORT}/${MONGODB_DB_NAME}`, { useNewUrlParser: true, useUnifiedTopology: true });
 }
 else{
     console.log('Mongodb Connecting with password');
-    const URI = `mongodb://${env.MONGODB_USERNAME}:${env.MONGODB_PASSWORD}@${env.MONGODB_HOST}:${env.MONGODB_PORT}/${env.MONGODB_DB_NAME}?authMechanism=DEFAULT&authSource=admin`
+    const URI = `mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@${MONGODB_HOST}:${env.MONGODB_PORT}/${MONGODB_DB_NAME}?authMechanism=DEFAULT&authSource=admin`
     mongoose.set('strictQuery', true);
     console.log("connecting...")
     mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
